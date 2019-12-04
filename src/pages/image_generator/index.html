@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+	<head>
+
+		<meta charset="utf-8">
+		<title>Upwork Feedback Image Generator</title>
+		<link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" >
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+		<link rel = "stylesheet" href = "style.css" >
+
+	</head>
+
+	<body>
+
+		<div id = "root" >
+
+			<div id = "sidebar" >
+
+				<label class = "sidebar_button" >
+					<input type = "radio" v-model = "feedback_image_type" value = "upwork_style" >
+					<span>Upwork style</span>
+				</label>
+
+				<label class = "sidebar_button" >
+					<input type = "radio" v-model = "feedback_image_type" value = "fire_style" >
+					<span>Fire style</span>
+				</label>
+
+				<label class = "sidebar_button" >
+					<input type = "radio" v-model = "feedback_image_type" value = "dark_wood_style" >
+					<span>Dark wood style</span>
+				</label>
+
+			</div>
+
+			<div id = "content" >
+
+				<div class = "feedback-card" v-for = "feedback_data in feedback_data_arr" >
+
+					<div class = "feedback feedback_image_container" v-if = "feedback_image_type === 'fire_style'" >
+
+						<div class = "feedback-headline" >
+							Completed successfully!
+						</div>
+						<div class = "feedback-text" v-text = "feedback_data.text" ></div>
+						<div class = "feedback-client_name" >- Upwork Client</div>
+						<div class = "feedback-stars" >
+							★★★★★
+						</div>
+
+					</div>
+
+					<div class = "upwork_style_feedback feedback_image_container" v-if = "feedback_image_type === 'upwork_style'" >
+
+						<img src = "/img/upwork_banner.png" >
+						<div class = "upwork_style_feedback-text" v-text = "get_upwork_style_text( feedback_data.text )" ></div>
+
+					</div>
+
+					<div class = "dark_wood_style_feedback feedback_image_container" v-if = "feedback_image_type === 'dark_wood_style'" >
+
+						<div class = "dark_wood_style_feedback-content" >
+
+							<div class = "dark_wood_style_feedback-title" v-text = "feedback_data.title" ></div>
+							<div class = "dark_wood_style_feedback-stars" >★★★★★</div>
+							<div class = "dark_wood_style_feedback-text" v-text = "get_upwork_style_text( feedback_data.text )" ></div>
+							<div class = "dark_wood_style_feedback-source" >-Upwork Client</div>
+
+						</div>
+
+					</div>
+
+					<div class = 'section_buttons' >
+
+						<div class = "chrome_button" v-on:click = "download_as_image( feedback_data, $event )" >Download as image</div>
+						<div style = "display: none" class = "chrome_button" v-on:click = "post_on_linkedin( feedback_data, $event )" >Post on LinkedIn</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id = "script" hidden >
+
+			<script src = "/lib/jquery.min.js" ></script>
+			<script src = "/lib/vue.min.js" ></script>
+			<script src = "/lib/html2canvas.min.js" ></script>
+
+			<script src = "main.js" ></script>
+
+		</div>
+
+	</body>
+
+</html>
