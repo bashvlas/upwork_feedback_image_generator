@@ -4,7 +4,7 @@
 		el: "#root",
 		data: {
 
-			feedback_image_type: "dark_wood_style",
+			feedback_image_type: "upwork_style",
 			feedback_data_arr: [],
 
 		},

@@ -1,0 +1,376 @@
+
+	/* fonts */
+
+	iframe {
+
+		width: 100%;
+		height: 100%;
+		border: none;
+
+	}
+		
+		@font-face {
+		    font-family: SuisseIntl;
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/400.eot");
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/400.woff2") format("woff2"),url("https://cdn.honey.io/fonts/suisse-intl/400.woff") format("woff"),url("https://cdn.honey.io/fonts/suisse-intl/400.ttf") format("truetype");
+		    font-weight: 400;
+		    font-display:swap}
+
+		@font-face {
+		    font-family: SuisseIntl;
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/500.eot");
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/500.woff2") format("woff2"),url("https://cdn.honey.io/fonts/suisse-intl/500.woff") format("woff"),url("https://cdn.honey.io/fonts/suisse-intl/500.ttf") format("truetype");
+		    font-weight: 500;
+		    font-display:swap}
+
+		@font-face {
+		    font-family: SuisseIntl;
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/600.eot");
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/600.woff2") format("woff2"),url("https://cdn.honey.io/fonts/suisse-intl/600.woff") format("woff"),url("https://cdn.honey.io/fonts/suisse-intl/600.ttf") format("truetype");
+		    font-weight: 600;
+		    font-display:swap}
+
+		@font-face {
+		    font-family: SuisseIntl;
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/700.eot");
+		    src: url("https://cdn.honey.io/fonts/suisse-intl/700.woff2") format("woff2"),url("https://cdn.honey.io/fonts/suisse-intl/700.woff") format("woff"),url("https://cdn.honey.io/fonts/suisse-intl/700.ttf") format("truetype");
+		    font-weight: 700;
+		    font-display:swap}
+
+		@font-face {
+		    font-family: Eina03;
+		    src: url("https://cdn.honey.io/fonts/eina03/700.eot");
+		    src: url("https://cdn.honey.io/fonts/eina03/700.woff2") format("woff2"),url("https://cdn.honey.io/fonts/eina03/700.woff") format("woff"),url("https://cdn.honey.io/fonts/eina03/700.ttf") format("truetype");
+		    font-weight: 700;
+		    font-display:swap}
+
+	/**/
+
+	/* general */
+
+		body {
+
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+
+		}
+
+		#root {
+
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+
+			font-family: Eina03,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+			font-family: SuisseIntl;
+
+		}
+
+	/**/
+
+	/* section */
+
+		.section {
+
+			box-sizing: border-box;
+
+			height: 100%;
+			width: 100%;
+			padding: 50px;
+
+			background-color: #f2f2f2;
+
+		}
+
+		.frame {
+
+			position: relative;
+			overflow: hidden;
+
+			height: 800px;
+			width: 1280px;
+
+			border: 2px solid white;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			background-color: white;
+
+		}
+
+		.promo {
+
+			position: relative;
+
+			width: 100%;
+			height: 100%;
+
+		}
+
+		.frame_background {
+
+			position: absolute;
+			z-index: 10;
+
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+
+			background-color: rgba( 0, 0, 0, 0.3 );
+
+		}
+
+		.frame .header {
+
+			position: relative;
+			z-index: 100;
+
+			width: 100%;
+			height: 100px;
+
+			font-weight: 400;
+			font-size: 34px;
+			text-align: center;
+			line-height: 100px;
+
+			color: rgba( 0, 0, 0, 0.6 );
+			color: #FFFFFF;
+
+		}
+
+		.header b {
+
+			font-weight: 400;
+
+		}
+
+		.content {
+
+			position: relative;
+			z-index: 100;
+
+			flex-grow: 1;
+			height: calc( 100% - 100px );
+
+		}
+
+		.fake_browser {
+
+			position: relative;
+			overflow: hidden;
+
+			width: 1000px;
+			height: 1000px;
+			margin: auto;
+
+			border-radius: 4px;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+		}
+
+		.fake_browser_header {
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+
+			box-sizing: border-box;
+
+			width: 100%;
+			height: 25px;
+			padding-left: 4px;
+
+			background-color: #484848;
+
+		}
+
+		.fake_browser_header_circle {
+
+			height: 8px;
+			width: 8px;
+			margin-left: 6px;
+
+			border-radius: 100px;
+			background-color: #767676;
+
+		}
+
+		.shade {
+
+			position: absolute;
+			z-index: 10;
+
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+
+			background-color: rgba( 0, 0, 0, 0.3 );
+
+		}
+
+		.magnifying_img_container {
+
+			position: absolute;
+			overflow: hidden;
+			z-index: 100;
+
+			border-radius: 1000px;
+			border: 3px solid orange;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+		}
+
+		.magnifying_img_container>img {
+
+			position: absolute;
+
+		}
+
+		.screenshot {
+
+			position: relative;
+			overflow: hidden;
+
+			width: 100%;
+			height: calc( 100% - 20px );
+
+		}
+
+		.screenshot>img {
+
+			position: absolute;
+
+		}
+
+		.fake_browser_1>.magnifying_img_container {
+
+			top: 204px;
+			left: 348px;
+			width: 300px;
+			height: 300px;
+
+		}
+
+		.fake_browser_1>.magnifying_img_container>img {
+
+			top: -425px;
+			left: -712px;
+			width: 1600px;
+
+		}
+
+		.fake_browser_2>.screenshot>img {
+
+			top: -250px;
+
+		}
+
+		.fake_browser_2>.magnifying_img_container {
+
+			top: 244px;
+			left: 660px;
+			width: 300px;
+			height: 300px;
+
+		}
+
+		.fake_browser_2>.magnifying_img_container>img {
+
+			top: -900px;
+			left: -1270px;
+			width: 1600px;
+
+		}
+
+		.fake_browser_3>.magnifying_img_container {
+
+			top: 204px;
+			left: 12px;
+			width: 300px;
+			height: 300px;
+
+		}
+
+		.fake_browser_3>.magnifying_img_container>img {
+
+			top: -533px;
+			left: -107px;
+			width: 2000px;
+
+		}
+
+		.fake_browser_4>.magnifying_img_container {
+
+			top: 309px;
+			left: 212px;
+			width: 300px;
+			height: 300px;
+
+		}
+
+		.fake_browser_4>.magnifying_img_container>img {
+
+			top: -638px;
+			left: -580px;
+			width: 2000px;
+
+		}
+
+	/**/
+
+	/* promotional_tile_images */
+
+		#promotional_tile_images {
+
+			display: flex;
+			flex-wrap: wrap;
+
+			position: relative;
+			overflow: auto;
+
+			height: 800px;
+			width: 1600px;
+
+			border: 2px solid white;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			background-color: white;
+
+		}
+
+		.tile {
+
+			position: relative;
+
+			overflow: hidden;
+
+			/*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+
+			/*transform: scale( 0.5 );*/
+
+		}
+
+		#small_tile {
+
+			width: 440px;
+			height: 280px;
+
+		}
+
+		#large_tile {
+
+			width: 920px;
+			height: 680px;
+
+		}
+
+		#marquee {
+
+			width: 1400px;
+			height: 560px;
+
+		}
+
+	/**/

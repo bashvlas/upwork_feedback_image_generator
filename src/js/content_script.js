@@ -37,8 +37,6 @@
 
 		};
 
-		console.log( feedback_data_arr );
-
 		return feedback_data_arr;
 
 	} () )

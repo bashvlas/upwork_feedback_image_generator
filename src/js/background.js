@@ -66,7 +66,7 @@
 					type: "normal",
 					title: "Generate Images",
 					contexts: [ "page" ],
-					documentUrlPatterns: [ "https://www.upwork.com/fl/*", "https://www.upwork.com/o/profiles/*" ]
+					documentUrlPatterns: [ "https://www.upwork.com/fl/*", "https://www.upwork.com/freelancers/*", "https://www.upwork.com/o/profiles/*" ]
 
 				});
 
