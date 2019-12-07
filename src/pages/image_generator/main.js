@@ -1,4 +1,54 @@
 
+	Vue.component( 'fire_style_feedback', {
+
+		template: document.querySelector( "#templates .fire_style_feedback" ).outerHTML,
+		props: [ "feedback_data" ],
+		methods: {},
+
+	});
+
+	Vue.component( 'upwork_style_feedback', {
+
+		template: document.querySelector( "#templates .upwork_style_feedback" ).outerHTML,
+		props: [ "feedback_data" ],
+		methods: {
+
+			get_upwork_style_text: function ( text ) {
+
+				if ( text && text.length > 150 ) {
+
+					var words = text.split( /\s+/g );
+					var i = 0;
+
+					text = "";
+
+					while ( text.length < 150 ) {
+
+						text += words[ i ] + " ";
+						i += 1;
+
+					};
+
+					text = text.slice( 0, -1 ) + "...";
+
+				};
+
+				return	`“${ text }”`;
+
+			},
+
+		},
+
+	});
+
+	Vue.component( 'dark_wood_style_feedback', {
+
+		template: document.querySelector( "#templates .dark_wood_style_feedback" ).outerHTML,
+		props: [ "feedback_data" ],
+		methods: {},
+
+	});
+
 	new Vue({
 
 		el: "#root",
@@ -6,6 +56,16 @@
 
 			feedback_image_type: "upwork_style",
 			feedback_data_arr: [],
+			selected_feedback_data: null,
+			active_step_name: '1',
+
+			style_name_arr: [
+
+				"fire_style_feedback",
+				"upwork_style_feedback",
+				"dark_wood_style_feedback",
+
+			],
 
 		},
 		methods: {
@@ -29,6 +89,17 @@
 				link.click();
 				document.body.removeChild(link);
 				delete link;
+
+			},
+
+			select_feedback: async function ( feedback_data ) {
+
+				this.selected_feedback_data = feedback_data;
+				this.active_step_name = '2';
+
+			},
+
+			select_style: function () {
 
 			},
 

@@ -24,7 +24,7 @@
 
 						<div class = "step_item" >
 
-							1. Select a review
+							1. Select feedback
 
 						</div>
 
@@ -46,46 +46,15 @@
 
 					<div class = "step_content-container" >
 
-						<div class = "step_content" >
+						<div class = "step_content" v-if = "active_step_name === '1'" >
 
 							<div class = "feedback-card" v-for = "feedback_data in feedback_data_arr" >
 
-								<div class = "feedback feedback_image_container" v-if = "feedback_image_type === 'fire_style'" >
-
-									<div class = "feedback-headline" >
-										Completed successfully!
-									</div>
-									<div class = "feedback-text" v-text = "feedback_data.text" ></div>
-									<div class = "feedback-client_name" >- Upwork Client</div>
-									<div class = "feedback-stars" >
-										★★★★★
-									</div>
-
-								</div>
-
-								<div class = "upwork_style_feedback feedback_image_container" v-if = "feedback_image_type === 'upwork_style'" >
-
-									<img src = "/img/upwork_banner.png" >
-									<div class = "upwork_style_feedback-text" v-text = "get_upwork_style_text( feedback_data.text )" ></div>
-
-								</div>
-
-								<div class = "dark_wood_style_feedback feedback_image_container" v-if = "feedback_image_type === 'dark_wood_style'" >
-
-									<div class = "dark_wood_style_feedback-content" >
-
-										<div class = "dark_wood_style_feedback-title" v-text = "feedback_data.title" ></div>
-										<div class = "dark_wood_style_feedback-stars" >★★★★★</div>
-										<div class = "dark_wood_style_feedback-text" v-text = "feedback_data.text" ></div>
-										<div class = "dark_wood_style_feedback-source" >- Upwork Client</div>
-
-									</div>
-
-								</div>
+								<div is = "upwork_style_feedback" v-bind:feedback_data = "feedback_data" ></div>
 
 								<div class = 'section_buttons' >
 
-									<div class = "chrome_button" v-on:click = "download_as_image( feedback_data, $event )" >Download as image</div>
+									<div class = "chrome_button" v-on:click = "select_feedback( feedback_data, $event )" >Select this feedback</div>
 									<div style = "display: none" class = "chrome_button" v-on:click = "post_on_linkedin( feedback_data, $event )" >Post on LinkedIn</div>
 
 								</div>
@@ -94,7 +63,65 @@
 
 						</div>
 
+						<div class = "step_content" v-if = "active_step_name === '2'" >
+
+							<div class = "feedback-card" v-for = "style_name in style_name_arr" >
+
+								<div
+									v-bind:is = "style_name" 
+									v-bind:feedback_data = "selected_feedback_data"
+									>
+									
+								</div>
+
+								<div class = 'section_buttons' >
+
+									<div class = "chrome_button" v-on:click = "select_style( 'test' )" >Select this style</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
 					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id = "templates" hidden >
+
+			<div class = "feedback_image_container fire_style_feedback" >
+
+				<div class = "fire_style_feedback-headline" >
+					Completed successfully!
+				</div>
+				<div class = "fire_style_feedback-text" v-text = "feedback_data.text" ></div>
+				<div class = "fire_style_feedback-client_name" >- Upwork Client</div>
+				<div class = "fire_style_feedback-stars" >
+					★★★★★
+				</div>
+
+			</div>
+
+			<div class = "feedback_image_container upwork_style_feedback" >
+
+				<img src = "/img/upwork_banner.png" >
+				<div class = "upwork_style_feedback-text" v-text = "get_upwork_style_text( feedback_data.text )" ></div>
+
+			</div>
+
+			<div class = "feedback_image_container dark_wood_style_feedback" >
+
+				<div class = "dark_wood_style_feedback-content" >
+
+					<div class = "dark_wood_style_feedback-title" v-text = "feedback_data.title" ></div>
+					<div class = "dark_wood_style_feedback-stars" >★★★★★</div>
+					<div class = "dark_wood_style_feedback-text" v-text = "feedback_data.text" ></div>
+					<div class = "dark_wood_style_feedback-source" >- Upwork Client</div>
 
 				</div>
 
