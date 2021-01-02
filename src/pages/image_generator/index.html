@@ -8,6 +8,7 @@
 		<link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" >
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
 		<link rel = "stylesheet" href = "style.css" >
 
 	</head>
@@ -22,21 +23,21 @@
 
 					<div class = "step_item-container" >
 
-						<div class = "step_item" >
+						<div class = "step_item" v-on:click = "step_item_click( 'select_feedback' )" v-bind:class = "{ active: active_step_name === '1' }" >
 
 							1. Select feedback
 
 						</div>
 
-						<div class = "step_item" >
+						<div class = "step_item" v-on:click = "step_item_click( 'select_style' )" v-bind:class = "{ active: active_step_name === '2' }" >
 
 							2. Select a style
 
 						</div>
 
-						<div class = "step_item" >
+						<div class = "step_item" v-on:click = "step_item_click( 'download' )" v-bind:class = "{ active: active_step_name === '3' }" >
 
-							3. Download or share
+							3. Download
 
 						</div>
 
@@ -76,7 +77,28 @@
 
 								<div class = 'section_buttons' >
 
-									<div class = "chrome_button" v-on:click = "select_style( 'test' )" >Select this style</div>
+									<div class = "chrome_button" v-on:click = "select_style( style_name )" >Select this style</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class = "step_content" v-if = "active_step_name === '3'" >
+
+							<div class = "feedback-card" >
+
+								<div
+									v-bind:is = "selected_style_name" 
+									v-bind:feedback_data = "selected_feedback_data"
+									>
+									
+								</div>
+
+								<div class = 'section_buttons' >
+
+									<div class = "chrome_button" v-on:click = "download_as_image( selected_feedback_data, $event )" >Download as image</div>
 
 								</div>
 
@@ -96,13 +118,17 @@
 
 			<div class = "feedback_image_container fire_style_feedback" >
 
-				<div class = "fire_style_feedback-headline" >
-					Completed successfully!
-				</div>
-				<div class = "fire_style_feedback-text" v-text = "feedback_data.text" ></div>
-				<div class = "fire_style_feedback-client_name" >- Upwork Client</div>
-				<div class = "fire_style_feedback-stars" >
-					★★★★★
+				<div class = "fire_style_feedback-content" >
+
+					<div class = "fire_style_feedback-headline" >
+						Completed successfully!
+					</div>
+					<div class = "fire_style_feedback-text" v-text = "feedback_data.text" ></div>
+					<div class = "fire_style_feedback-client_name" >- Upwork Client</div>
+					<div class = "fire_style_feedback-stars" >
+						★★★★★
+					</div>
+
 				</div>
 
 			</div>
@@ -122,6 +148,19 @@
 					<div class = "dark_wood_style_feedback-stars" >★★★★★</div>
 					<div class = "dark_wood_style_feedback-text" v-text = "feedback_data.text" ></div>
 					<div class = "dark_wood_style_feedback-source" >- Upwork Client</div>
+
+				</div>
+
+			</div>
+
+			<div class = "feedback_image_container christmas_style_feedback" >
+
+				<div class = "christmas_style_feedback-content" >
+
+					<div class = "christmas_style_feedback-title" v-text = "feedback_data.title" ></div>
+					<div class = "christmas_style_feedback-stars" >★★★★★</div>
+					<div class = "christmas_style_feedback-text" v-text = "feedback_data.text" ></div>
+					<div class = "christmas_style_feedback-source" >- Upwork Client</div>
 
 				</div>
 

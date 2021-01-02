@@ -13,6 +13,9 @@
    viewBox="0 0 24 24"
    id="svg4"
    sodipodi:docname="logo_white.svg"
+   inkscape:export-filename="/home/vlas/browser_extension_developer/extensions/upwork_feedback_image_generator/src/img/star.svg.png"
+   inkscape:export-xdpi="512"
+   inkscape:export-ydpi="512"
    inkscape:version="0.92.4 (f8dce91, 2019-08-02)">
   <metadata
      id="metadata10">
@@ -22,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,15 +45,15 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="9.8333333"
-     inkscape:cx="-1.4745763"
+     inkscape:cx="-21.762712"
      inkscape:cy="12"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4" />
   <path
-     d="M 8,5.3333334 V 16 a 2.6666667,2.6666667 0 0 0 2.666667,2.666666 h 2.666666 A 2.6666667,2.6666667 0 0 0 16,16 V 5.3333334 H 13.333333 V 16 H 10.666667 V 5.3333334 H 8 M 2.6666667,0 H 21.333333 A 2.6666667,2.6666667 0 0 1 24,2.6666667 V 21.333333 A 2.6666667,2.6666667 0 0 1 21.333333,24 H 2.6666667 A 2.6666667,2.6666667 0 0 1 0,21.333333 V 2.6666667 A 2.6666667,2.6666667 0 0 1 2.6666667,0 Z"
+     d="M 12,18.924 19.416,23.4 17.448,14.964 24,9.288 15.372,8.544 12,0.6 8.628,8.544 0,9.288 6.54,14.964 4.584,23.4 Z"
      id="path2"
      inkscape:connector-curvature="0"
-     style="stroke-width:1.33333325;fill:#ffffff;fill-opacity:1" />
+     style="stroke-width:1.20000005;fill:#fccd01;fill-opacity:1" />
 </svg>

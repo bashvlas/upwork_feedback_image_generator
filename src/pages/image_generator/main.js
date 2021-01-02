@@ -49,6 +49,14 @@
 
 	});
 
+	Vue.component( 'christmas_style_feedback', {
+
+		template: document.querySelector( "#templates .christmas_style_feedback" ).outerHTML,
+		props: [ "feedback_data" ],
+		methods: {},
+
+	});
+
 	new Vue({
 
 		el: "#root",
@@ -56,12 +64,15 @@
 
 			feedback_image_type: "upwork_style",
 			feedback_data_arr: [],
-			selected_feedback_data: null,
 			active_step_name: '1',
+
+			selected_feedback_data: null,
+			selected_style_name: null,
 
 			style_name_arr: [
 
-				"fire_style_feedback",
+				// "christmas_style_feedback",
+				// "fire_style_feedback",
 				"upwork_style_feedback",
 				"dark_wood_style_feedback",
 
@@ -99,7 +110,10 @@
 
 			},
 
-			select_style: function () {
+			select_style: function ( style_name ) {
+
+				this.selected_style_name = style_name;
+				this.active_step_name = '3';
 
 			},
 
@@ -110,6 +124,20 @@
 				var img_url = canvas.toDataURL( "image/png" );
 
 				return img_url;
+
+			},
+
+			step_item_click: function ( step_item_name ) {
+
+				if ( step_item_name === "select_feedback" ) {
+
+					this.active_step_name = "1";
+
+				} else if ( step_item_name === "select_style" && this.selected_feedback_data ) {
+
+					this.active_step_name = "2";
+
+				};
 
 			},
 

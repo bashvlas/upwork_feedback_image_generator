@@ -2,9 +2,9 @@
 	{
 
 		"manifest_version": 2,
-		"name": "Feedback Image Generator for Upwork",
-		"version": "1.0.1",
-		"description": "Create cool images from your feedback on Upwork. Post them on social networks to attract new clients.",
+		"name": "Feedback Image Generator",
+		"version": "1.0.0",
+		"description": "This extension allows you to create cool images from your feedback on Upwork.",
 		"author": "",
 
 		"icons": {
@@ -23,9 +23,6 @@
 		"background": {
 
 			"scripts": [
-
-				"/lib/jquery.min.js",
-				"/lib/webx.js",
 
 				"/js/background.js"
 
